@@ -1,3 +1,5 @@
+import math
+
 def add(x, y):
     return x + y
 
@@ -15,6 +17,11 @@ def divide(x, y):
 def square(x):
     return x * x
 
+def sqrt(x):
+    if x < 0:
+        return "Error: Negative input!"
+    return math.sqrt(x)
+
 # 사용자 입력
 num1 = float(input("첫 번째 숫자를 입력하세요: "))
 
@@ -24,6 +31,7 @@ print("2. 뺄셈")
 print("3. 곱셈")
 print("4. 나눗셈")
 print("5. 제곱")
+print("6. 제곱근")
 
 choice = input("선택 (1/2/3/4/5): ")
 
@@ -41,5 +49,8 @@ elif choice == '4':
     print("결과:", divide(num1, num2))
 elif choice == '5':
     print("결과:", square(num1))
+# 선택지에 조건 추가
+elif choice == '6':
+    print("결과:", sqrt(num1))
 else:
     print("잘못된 선택입니다.")
